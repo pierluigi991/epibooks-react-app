@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { Card, Badge, Button } from "react-bootstrap";
-import CommentArea from "./CommentArea ";
+import CommentArea from "./CommentArea";
+import NewComment from "./NewComment";
 class SingleBook extends Component {
   state = {
     selected: false,
@@ -32,6 +33,8 @@ class SingleBook extends Component {
           >
             Mostra Commenti
           </Button>
+
+          {this.state.addComment && <NewComment />}
         </Card.Body>
       </Card>
     );

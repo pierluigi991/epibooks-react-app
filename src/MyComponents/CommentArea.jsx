@@ -26,6 +26,7 @@ class CommentArea extends Component {
       throw new Error(error);
     }
   };
+
   render() {
     return <CommentList comments={this.state.comments}></CommentList>;
   }
