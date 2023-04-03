@@ -4,7 +4,7 @@ import CommentArea from "./CommentArea ";
 class SingleBook extends Component {
   state = {
     selected: false,
-    viewComments: false,
+    showComments: false,
   };
   handleOnClick = () => {
     this.setState({ selected: !this.state.selected });
@@ -21,13 +21,13 @@ class SingleBook extends Component {
           <Card.Text>
             Prezzo: <Badge bg="secondary">{this.props.price}</Badge> €
           </Card.Text>
-          {this.state.viewComments && <CommentArea />}
+          {this.state.showComments && <CommentArea asin={this.props.book.asin} />}
 
           <Button
             variant="primary"
             className="w-100"
             onClick={() => {
-              this.setState({ selected: true, viewComments: !this.state.viewComments });
+              this.setState({ selected: true, viewComments: !this.state.showComments });
             }}
           >
             Mostra Commenti
